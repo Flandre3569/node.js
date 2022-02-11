@@ -1,9 +1,11 @@
-const connection = require('mysql2');
+const conn = require('../app/database')
 
 class UserService {
   async register(user) {
-    console.log(`用户数据已存储到数据库:${user}`);
-    return '用户注册成功';
+    const { username, password } = user;
+    const sql = ('INSERT INTO `users`(`name`, `password`) VALUES (?, ?);');
+    const result = await conn.execute(sql, [username, password]);
+    return result;
   }
 }
 
