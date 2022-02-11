@@ -12,7 +12,7 @@ class UserService {
     const { username, password } = user;
     const sql = 'SELECT * FROM users WHERE `name` = ?;';
     const result = await conn.execute(sql, [username])
-    return result;
+    return result[0];
   }
 }
 
