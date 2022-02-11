@@ -8,7 +8,7 @@ const errorHandler = (err, ctx) => {
       message = '请输入用户名和密码';
       break;
     case errors.ALREADY_HAVE_USER:
-      status = 400;
+      status = 409;
       message = '该用户名已存在';
       break;
     default:
