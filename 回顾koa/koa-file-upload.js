@@ -4,7 +4,7 @@ const Router = require('koa-router')
 const multer = require('@koa/multer')
 
 const app = new Koa()
-const uploadRouter = new Router({prefix: '/upload'})
+const uploadRouter = new Router({ prefix: '/upload' })
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
